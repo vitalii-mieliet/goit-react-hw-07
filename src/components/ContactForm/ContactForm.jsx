@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useId } from "react";
 import { contactFormValidation } from "../../validation/formValidation";
-import { addContact } from "../../redux/operation.js";
+import { addContact } from "../../redux/contactsOps.js";
 import css from "./ContactForm.module.css";
 
 const ContactForm = () => {
