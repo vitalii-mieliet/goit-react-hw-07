@@ -2,9 +2,8 @@ import { useDispatch } from "react-redux";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useId } from "react";
 import { contactFormValidation } from "../../validation/formValidation";
+import { addContact } from "../../redux/operation.js";
 import css from "./ContactForm.module.css";
-import { addContact } from "../../redux/contactsSlice";
-import { nanoid } from "nanoid";
 
 const ContactForm = () => {
   const nameId = useId();
@@ -12,7 +11,7 @@ const ContactForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (contact, actions) => {
-    dispatch(addContact({ ...contact, id: nanoid() }));
+    dispatch(addContact(contact));
     actions.resetForm();
   };
   return (
